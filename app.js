@@ -1261,14 +1261,22 @@ function renderTamFunnel() {
   const xLin = d3.scaleSqrt().domain([0, maxV]).range([0, innerW]);
 
   const g = svg.append('g').attr('transform', `translate(${margin.left},${margin.top})`);
-  const colors = ['#9A968D', '#6B6863', '#0F4C5C', '#163B47', '#9C4221'];
+  // Darkened palette to give crisp white-text contrast on every bar (was ['#9A968D','#6B6863','#0F4C5C','#163B47','#9C4221'])
+  const colors = ['#3D3A33', '#2B2926', '#0F4C5C', '#0B2F38', '#7A2E14'];
 
   stages.forEach((s, i) => {
     const w = Math.max(xLin(s.value), minBarW);
     const offset = (innerW - w) / 2;
     const yPos = i * stageH;
     g.append('rect').attr('x', offset).attr('y', yPos).attr('width', w).attr('height', barH).attr('rx', 3).attr('fill', colors[i]);
-    g.append('text').attr('x', offset + w / 2).attr('y', yPos + barH / 2).attr('dy', '0.36em').attr('text-anchor', 'middle').attr('fill', '#FAFAF7').attr('font-size', 13).attr('font-weight', 700).text(fmtNum(s.value));
+    g.append('text')
+      .attr('x', offset + w / 2).attr('y', yPos + barH / 2).attr('dy', '0.36em')
+      .attr('text-anchor', 'middle')
+      .attr('fill', '#FFFFFF')
+      .attr('font-size', 14).attr('font-weight', 700)
+      .attr('letter-spacing', '0.03em')
+      .style('font-variant-numeric', 'tabular-nums')
+      .text(fmtNum(s.value));
     g.append('text').attr('x', innerW / 2).attr('y', yPos + barH + 16).attr('text-anchor', 'middle').attr('fill', '#1A1812').attr('font-size', 11.5).attr('font-weight', 600).text(s.label);
     g.append('text').attr('x', innerW / 2).attr('y', yPos + barH + 32).attr('text-anchor', 'middle').attr('fill', '#9A968D').attr('font-size', 10.5).text(s.sub);
     // arrow between stages
