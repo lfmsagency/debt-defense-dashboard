@@ -1261,8 +1261,8 @@ function renderTamFunnel() {
   const xLin = d3.scaleSqrt().domain([0, maxV]).range([0, innerW]);
 
   const g = svg.append('g').attr('transform', `translate(${margin.left},${margin.top})`);
-  // Darkened palette to give crisp white-text contrast on every bar (was ['#9A968D','#6B6863','#0F4C5C','#163B47','#9C4221'])
-  const colors = ['#3D3A33', '#2B2926', '#0F4C5C', '#0B2F38', '#7A2E14'];
+  // Deep palette for crisp white-text contrast (WCAG AAA on every bar)
+  const colors = ['#1F1D19', '#0F0E0C', '#0F4C5C', '#0B2F38', '#5A1F0C'];
 
   stages.forEach((s, i) => {
     const w = Math.max(xLin(s.value), minBarW);
@@ -1273,8 +1273,8 @@ function renderTamFunnel() {
       .attr('x', offset + w / 2).attr('y', yPos + barH / 2).attr('dy', '0.36em')
       .attr('text-anchor', 'middle')
       .attr('fill', '#FFFFFF')
-      .attr('font-size', 14).attr('font-weight', 700)
-      .attr('letter-spacing', '0.03em')
+      .attr('font-size', 16).attr('font-weight', 800)
+      .attr('letter-spacing', '0.04em')
       .style('font-variant-numeric', 'tabular-nums')
       .text(fmtNum(s.value));
     g.append('text').attr('x', innerW / 2).attr('y', yPos + barH + 16).attr('text-anchor', 'middle').attr('fill', '#1A1812').attr('font-size', 11.5).attr('font-weight', 600).text(s.label);
