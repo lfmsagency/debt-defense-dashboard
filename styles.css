@@ -626,6 +626,7 @@ main { max-width: 1440px; margin: 0 auto; padding: 0 32px 24px; }
 .filing-stat__default strong { color: var(--text); font-variant-numeric: tabular-nums; }
 
 .chart-wrap--funnel { min-height: 320px; }
+.chart-wrap--funnel .funnel-value { fill: #FFFFFF !important; }
 
 .risks { list-style: none; padding: 0; margin: 0; display: grid; gap: 10px; }
 .risks li {

@@ -1270,9 +1270,11 @@ function renderTamFunnel() {
     const yPos = i * stageH;
     g.append('rect').attr('x', offset).attr('y', yPos).attr('width', w).attr('height', barH).attr('rx', 3).attr('fill', colors[i]);
     g.append('text')
+      .attr('class', 'funnel-value')
       .attr('x', offset + w / 2).attr('y', yPos + barH / 2).attr('dy', '0.36em')
       .attr('text-anchor', 'middle')
       .attr('fill', '#FFFFFF')
+      .style('fill', '#FFFFFF')
       .attr('font-size', 16).attr('font-weight', 800)
       .attr('letter-spacing', '0.04em')
       .style('font-variant-numeric', 'tabular-nums')
