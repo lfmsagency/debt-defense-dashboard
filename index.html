@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Consumer Debt Defense Firm — Strategic Analysis Dashboard</title>
+  <meta name="description" content="Strategic analysis dashboard for the Consumer Debt Defense Firm: assumptions audit, competitive landscape, case law, and midline financial projections." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%230F4C5C'/%3E%3Cpath d='M8 20h16M11 12v8M21 12v8' stroke='%23FAFAF7' stroke-width='2.5' fill='none' stroke-linecap='square'/%3E%3C/svg%3E">
+</head>
+<body>
+  <!-- Top nav -->
+  <header class="topnav" id="topnav">
+    <div class="topnav__inner">
+      <div class="brand">
+        <svg class="brand__mark" viewBox="0 0 32 32" aria-hidden="true">
+          <rect width="32" height="32" rx="3" fill="#0F4C5C"/>
+          <path d="M8 21h16M11 12v9M21 12v9" stroke="#FAFAF7" stroke-width="2.4" fill="none" stroke-linecap="square"/>
+        </svg>
+        <div class="brand__text">
+          <div class="brand__name">Consumer Debt Defense Firm</div>
+          <div class="brand__sub">Strategic Analysis Dashboard · v2.0 · May 2026 · Partner review only</div>
+        </div>
+      </div>
+      <nav class="topnav__links" aria-label="Section navigation">
+        <a href="#overview">Overview</a>
+        <a href="#assumptions">Assumptions Audit</a>
+        <a href="#competitive">Competitive Landscape</a>
+        <a href="#caselaw">Case Law</a>
+        <a href="#projections">Projections</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Filter bar -->
+  <div class="filterbar" id="filterbar">
+    <div class="filterbar__inner">
+      <div class="filterbar__group">
+        <span class="filterbar__label">State</span>
+        <div class="chipgroup" id="state-chips" role="tablist">
+          <button class="chip is-active" data-state="ALL">All States</button>
+          <button class="chip" data-state="CA">CA</button>
+          <button class="chip" data-state="FL">FL</button>
+          <button class="chip" data-state="WA">WA</button>
+          <button class="chip" data-state="NY">NY</button>
+        </div>
+      </div>
+      <div class="filterbar__group">
+        <span class="filterbar__label">Court district</span>
+        <select class="select" id="court-district-select" aria-label="Court district filter">
+          <option value="ALL">All districts</option>
+        </select>
+        <span class="filterbar__hint">Applies to competitive landscape only</span>
+      </div>
+    </div>
+  </div>
+
+  <main>
+    <!-- Overview -->
+    <section id="overview" class="section">
+      <div class="section__head">
+        <h1 class="section__title">Overview</h1>
+        <p class="section__lede" id="overview-lede">Midline reality-check of the Year 1 financial picture and the competitive surface across CA, FL, WA, and NY.</p>
+      </div>
+
+      <div class="kpi-grid" id="overview-kpis"></div>
+
+      <div class="grid-2col">
+        <div class="card card--map">
+          <div class="card__head">
+            <h2 class="card__title">Competitor density · target states</h2>
+            <p class="card__sub">Click a state to filter the dashboard. Hover for top firms and est. annual filings.</p>
+          </div>
+          <div class="map-wrap" id="choropleth"></div>
+          <div class="map-legend" id="map-legend"></div>
+        </div>
+        <div class="card">
+          <div class="card__head">
+            <h2 class="card__title">Five most important course-corrections</h2>
+            <p class="card__sub">From the 21-assumption midline audit. Full justifications below.</p>
+          </div>
+          <ol class="corrections" id="corrections"></ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- Assumptions Audit -->
+    <section id="assumptions" class="section">
+      <div class="section__head">
+        <h1 class="section__title">Assumptions Audit</h1>
+        <p class="section__lede">Each load-bearing assumption from the v2.0 plan, midline-tested against primary sources. Click a row to expand justification and evidence.</p>
+      </div>
+      <div class="audit-summary" id="audit-summary"></div>
+      <div class="audit-table" id="audit-table"></div>
+    </section>
+
+    <!-- Competitive Landscape -->
+    <section id="competitive" class="section">
+      <div class="section__head">
+        <h1 class="section__title">Competitive Landscape</h1>
+        <p class="section__lede" id="competitive-lede"></p>
+      </div>
+
+      <div class="kpi-grid" id="competitive-kpis"></div>
+
+      <div class="grid-2col">
+        <div class="card">
+          <div class="card__head">
+            <h2 class="card__title">Top 15 by estimated annual revenue</h2>
+            <p class="card__sub" id="top-revenue-sub"></p>
+          </div>
+          <div class="chart-wrap" id="top-revenue-chart"></div>
+        </div>
+        <div class="card">
+          <div class="card__head">
+            <h2 class="card__title">Threat distribution by state</h2>
+            <p class="card__sub">Share of competitors rated high / medium / low threat to entry.</p>
+          </div>
+          <div class="chart-wrap" id="threat-stacked-chart"></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card__head card__head--row">
+          <div>
+            <h2 class="card__title">All tracked competitors</h2>
+            <p class="card__sub">Search across firm name, city, and practice focus. Click a row for the full profile.</p>
+          </div>
+          <input id="competitor-search" class="search" type="search" placeholder="Search firm, city, focus…" aria-label="Search competitors" />
+        </div>
+        <div class="chipgroup chipgroup--filters" id="competitor-filters">
+          <button class="chip chip--filter" data-filter="threat-high">Threat = High</button>
+          <button class="chip chip--filter" data-filter="counterclaims">Takes counterclaims</button>
+          <button class="chip chip--filter" data-filter="google-ads">Heavy Google Ads</button>
+          <button class="chip chip--filter" data-filter="spanish">Spanish service</button>
+        </div>
+        <div class="table-wrap">
+          <table class="data-table" id="competitor-table">
+            <thead>
+              <tr>
+                <th data-sort="firm_name">Firm</th>
+                <th data-sort="target_state">State</th>
+                <th data-sort="hq_city">HQ City</th>
+                <th data-sort="attorney_count_est" class="num">Attys</th>
+                <th data-sort="est_revenue_mid" class="num">Est. Revenue</th>
+                <th data-sort="fee_structure">Fee Structure</th>
+                <th class="center">CC</th>
+                <th class="center">ES</th>
+                <th class="center">Ads</th>
+                <th data-sort="threat_level">Threat</th>
+              </tr>
+            </thead>
+            <tbody id="competitor-tbody"></tbody>
+          </table>
+        </div>
+        <div class="table-foot" id="competitor-table-foot"></div>
+      </div>
+    </section>
+
+    <!-- Case Law -->
+    <section id="caselaw" class="section">
+      <div class="section__head">
+        <h1 class="section__title">Case Law Survey</h1>
+        <p class="section__lede">Nine defense doctrines, four states. Cite-checked for "still good law" status as of the audit date.</p>
+        <div class="section__actions">
+          <button class="btn btn--ghost" id="print-caselaw">Print this state's case law brief</button>
+        </div>
+      </div>
+      <div class="chipgroup" id="caselaw-tabs" role="tablist">
+        <button class="chip" data-cl-state="CA">California</button>
+        <button class="chip" data-cl-state="FL">Florida</button>
+        <button class="chip" data-cl-state="WA">Washington</button>
+        <button class="chip" data-cl-state="NY">New York</button>
+      </div>
+      <div id="caselaw-doctrines"></div>
+    </section>
+
+    <!-- Projections -->
+    <section id="projections" class="section">
+      <div class="section__head">
+        <h1 class="section__title">Projections</h1>
+        <p class="section__lede">Year 1 financial recast at midline assumptions. Plan v2.0 figures shown alongside for delta visibility.</p>
+      </div>
+
+      <div class="grid-2col">
+        <div class="card">
+          <div class="card__head">
+            <h2 class="card__title">Year 1 revenue by scenario</h2>
+            <p class="card__sub">Bear / Plan v2.0 / Midline / Bull. Use midline for capital planning.</p>
+          </div>
+          <div class="chart-wrap" id="scenarios-chart"></div>
+        </div>
+        <div class="card">
+          <div class="card__head">
+            <h2 class="card__title">Year 1 quarterly build</h2>
+            <p class="card__sub">New files (bars) and revenue (line) — plan vs midline.</p>
+          </div>
+          <div class="chart-wrap" id="quarterly-chart"></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card__head">
+          <h2 class="card__title">Monthly burn breakdown — plan vs midline</h2>
+          <p class="card__sub">Plan $217.8K/mo · Midline $252.5K/mo. Paralegal load and bar compliance counsel are the primary gaps.</p>
+        </div>
+        <div class="chart-wrap" id="burn-chart"></div>
+      </div>
+
+      <div class="grid-2col">
+        <div class="card">
+          <div class="card__head">
+            <h2 class="card__title">Filing volumes & default-judgment rates</h2>
+            <p class="card__sub">Annual consumer-debt collection filings and the default-eligible share per state.</p>
+          </div>
+          <div class="filings-grid" id="filings-grid"></div>
+        </div>
+        <div class="card">
+          <div class="card__head">
+            <h2 class="card__title">TAM funnel · 4-state serviceable population</h2>
+            <p class="card__sub">From total annual filings to Year 1 midline capture target.</p>
+          </div>
+          <div class="chart-wrap chart-wrap--funnel" id="tam-funnel"></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card__head">
+          <h2 class="card__title">Key risks · ranked</h2>
+          <p class="card__sub">From projections.key_risks_ranked. Mitigants reference Lawmatics + Lob workflow and 4-state bar compliance.</p>
+        </div>
+        <ol class="risks" id="risks"></ol>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer__inner">
+      <div>
+        <strong>Methodology:</strong> Midline reality-check against primary sources (court statistics, Pew Charitable Trusts, NCLC, state bar rules, vendor pricing). Not conservative, not liberal.
+      </div>
+      <div class="footer__meta">
+        <span>Last refreshed · May 2026</span>
+        <span>Generated for Adam Cohen, Christopher D'Anjou, and Jesse Dean-Kluger · Strategy session prep</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Competitor drawer -->
+  <div class="drawer" id="competitor-drawer" hidden>
+    <div class="drawer__scrim" data-drawer-close></div>
+    <aside class="drawer__panel" role="dialog" aria-label="Competitor detail">
+      <button class="drawer__close" data-drawer-close aria-label="Close">×</button>
+      <div class="drawer__content" id="drawer-content"></div>
+    </aside>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+  <script src="https://cdn.jsdelivr.net/npm/topojson-client@3"></script>
+  <script src="app.js"></script>
+</body>
+</html>

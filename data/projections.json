@@ -1,0 +1,108 @@
+{
+  "headline": "Midline Year 1 projections — recalibrated from plan v2.0",
+  "scenarios": {
+    "bear": { "year1_revenue": 2300000, "label": "Bear (slow ramp, low conversion)" },
+    "base_plan": { "year1_revenue": 3750000, "label": "Plan v2.0 base case (as written)" },
+    "midline": { "year1_revenue": 2850000, "label": "Midline (audit-recalibrated)" },
+    "bull": { "year1_revenue": 6200000, "label": "Bull (best-execution)" }
+  },
+  "monthly_burn": {
+    "plan": 217800,
+    "midline": 252500,
+    "components": [
+      { "category": "Partner draws (3 × $14K)", "plan": 42000, "midline": 42000 },
+      { "category": "Associate attorneys (3-4)", "plan": 28000, "midline": 32000 },
+      { "category": "Paralegals (10)", "plan": 50000, "midline": 71000 },
+      { "category": "Intake + admin (4)", "plan": 16000, "midline": 18000 },
+      { "category": "Core tech stack", "plan": 4500, "midline": 5000 },
+      { "category": "Docket engine infra", "plan": 22000, "midline": 24000 },
+      { "category": "Other marketing", "plan": 30000, "midline": 30000 },
+      { "category": "Filing fees / costs", "plan": 11000, "midline": 12500 },
+      { "category": "Insurance (malpractice, GL, cyber)", "plan": 2800, "midline": 4200 },
+      { "category": "Office (hybrid, 4 states)", "plan": 8000, "midline": 8000 },
+      { "category": "Bar dues, CLE, compliance counsel", "plan": 3500, "midline": 5800 }
+    ]
+  },
+  "capital_runway": {
+    "plan_recommendation_usd": 2000000,
+    "midline_recommendation_usd": 2750000,
+    "runway_months_at_midline_burn": 10.9
+  },
+  "year1_build_midline": [
+    { "quarter": "Q1", "new_files_plan": 85, "new_files_midline": 65, "revenue_plan": 135000, "revenue_midline": 105000 },
+    { "quarter": "Q2", "new_files_plan": 265, "new_files_midline": 195, "revenue_plan": 465000, "revenue_midline": 345000 },
+    { "quarter": "Q3", "new_files_plan": 620, "new_files_midline": 475, "revenue_plan": 1050000, "revenue_midline": 800000 },
+    { "quarter": "Q4", "new_files_plan": 1250, "new_files_midline": 925, "revenue_plan": 2100000, "revenue_midline": 1600000 }
+  ],
+  "filing_volumes_by_state": {
+    "CA": { "estimated_annual_filings": 250000, "verdict": "supported", "notes": "Judicial Council of California court statistics. Concentrated in Limited Civil (<$35K)." },
+    "FL": { "estimated_annual_filings": 200000, "verdict": "supported", "range_low": 150000, "range_high": 250000, "notes": "County Court ≤ $50K. Midland, LVNV, Portfolio Recovery account for >60% of debt-buyer filings." },
+    "WA": { "estimated_annual_filings": 35000, "verdict": "supported", "range_low": 25000, "range_high": 45000, "notes": "Suttell & Hammer and Patenaude & Felix combined >50% of debt-buyer plaintiff filings." },
+    "NY": { "estimated_annual_filings": 95000, "verdict": "supported with CCFA suppression noted", "pre_ccfa_2019": 250000, "post_ccfa_2024": 95000, "notes": "Filings fell ~60% from 2019 peak after April 2022 CCFA effective date. Adaptation by debt buyers is real and ongoing." }
+  },
+  "default_judgment_rates": {
+    "national_avg": 70,
+    "CA_no_answer_rate": 91,
+    "FL_default_rate": 73,
+    "WA_default_rate": 70,
+    "NY_default_rate_pre_ccfa": 39,
+    "NY_default_rate_post_ccfa": 28,
+    "source": "Pew Charitable Trusts (2020), state court annual reports, NCLC research"
+  },
+  "tam_serviceable": {
+    "total_annual_filings_4_states": 580000,
+    "default_eligible_share_estimate": 0.70,
+    "served_defendants_potentially_contactable": 406000,
+    "serviceable_at_2pct_capture": 8120,
+    "serviceable_at_3pct_capture": 12180,
+    "midline_year1_capture_target": 1660,
+    "target_share_of_serviceable_year1": 0.0204
+  },
+  "unit_economics_midline": {
+    "tier1_flat_fee": 950,
+    "tier2_flat_fee": 1950,
+    "tier3_flat_fee": 1950,
+    "tier3_avg_contingency": 1800,
+    "blended_avg_revenue_per_case": 1550,
+    "marketing_cac_blended_midline": 200,
+    "marketing_cac_plan": 275,
+    "filing_fees_avg": 175,
+    "paralegal_hours_avg": 6,
+    "paralegal_loaded_rate_midline": 45,
+    "attorney_hours_avg": 1.4,
+    "attorney_loaded_rate_midline": 175,
+    "contribution_margin_per_case_midline": 720,
+    "contribution_margin_per_case_plan": 1167
+  },
+  "docket_engine_economics_midline": {
+    "filings_monitored_per_1000": 1000,
+    "servable_defendants": 750,
+    "skip_trace_match_rate": 0.62,
+    "matched_defendants": 465,
+    "direct_mail_cost_per_piece_y1": 1.75,
+    "total_direct_mail_cost": 814,
+    "sms_cost": 33,
+    "postcard_cost": 326,
+    "digital_retargeting_cost": 500,
+    "skip_trace_cost": 188,
+    "ai_infra_cost": 200,
+    "total_cost_per_1000_filings": 2061,
+    "midline_conversion_rate": 0.022,
+    "retained_clients_per_1000": 10.2,
+    "revenue_per_1000_filings": 15810,
+    "midline_cac_per_retained_client": 202
+  },
+  "counterclaim_yield": {
+    "plan_year1": "$700K - $1.4M",
+    "midline_year1": "$325K - $475K",
+    "midline_year2": "$850K - $1.4M",
+    "rationale": "FDCPA/state-statute counterclaim cases require 6-18 months from intake to resolution. Tier 3 files opened in Q2-Q3 of Year 1 yield substantial recoveries primarily in Year 2."
+  },
+  "key_risks_ranked": [
+    { "rank": 1, "risk": "Direct mail conversion rate falls below 2%", "impact": "high", "probability": "medium", "mitigant": "Build 5-touch sequence A/B testing into the Lawmatics workflow from Day 1; abandon the docket engine in any state where conversion < 1.5% by Month 6." },
+    { "rank": 2, "risk": "NY CCFA dismissal advantage erodes further", "impact": "high", "probability": "medium", "mitigant": "Diversify counterclaim revenue across CA (Rosenthal) and WA (CPA treble) to reduce NY dependence." },
+    { "rank": 3, "risk": "Florida Bar 4-7.18 mailer pre-filing requirement creates 20+ day delay", "impact": "medium", "probability": "high (already known)", "mitigant": "Pre-file 15+ template variants covering top debt-buyer plaintiffs before launch; rotate templates rather than dynamic generation in FL." },
+    { "rank": 4, "risk": "Counterclaim recoveries slip to Year 2", "impact": "medium", "probability": "high", "mitigant": "Capital plan must not assume counterclaim cash in Year 1; treat as Year 2 upside." },
+    { "rank": 5, "risk": "Multi-state malpractice insurance higher than projected", "impact": "low", "probability": "high", "mitigant": "Bind a 4-state policy with a TCPA/FDCPA rider in Month 1; budget $4,200/mo not $2,800." }
+  ]
+}

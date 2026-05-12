@@ -1,0 +1,527 @@
+{
+  "audit_metadata": {
+    "prepared_for": "Adam Cohen, Christopher D'Anjou, Jesse Dean-Kluger",
+    "firm": "Consumer Debt Defense Firm (sister brand to Ticket Crushers Law)",
+    "plan_version": "Draft v2.0, May 2026",
+    "audit_date": "2026-05",
+    "auditor_note": "Midline reality-check. Not conservative, not liberal. All dollar figures are nominal 2025–2026 USD unless noted."
+  },
+  "assumptions": [
+    {
+      "id": "ca_filing_volume",
+      "claim_in_plan": "~250K+ collection cases filed annually in CA",
+      "category": "market_size",
+      "verdict": "supported",
+      "midline_estimate": "~220,000–265,000 consumer debt/collection cases filed annually in CA superior courts across 16+ counties; FY 2022-23 limited civil (non-UD) total was 265,737 statewide across all 58 counties",
+      "evidence": [
+        {
+          "source": "Debt Collection Lab — One-Sided Litigation (California study, 16 counties)",
+          "url": "https://debtcollectionlab.org/docs/OneSidedLitigation.pdf",
+          "data_point": "255,089 debt collection cases filed in 2019 across 16 counties representing 80% of CA population; debt cases were 37% of total civil docket in 2019"
+        },
+        {
+          "source": "California Judicial Council 2024 Court Statistics Report (FY 2022-23)",
+          "url": "https://courts.ca.gov/sites/default/files/courts/default/2024-12/2024-court-statistics-report.pdf",
+          "data_point": "402,019 total limited civil filings statewide in FY 2022-23; non-UD limited civil was 265,737 — the category that encompasses most collection cases"
+        },
+        {
+          "source": "Debt Collection Lab evaluation of CA documentation reforms",
+          "url": "https://debtcollectionlab.org/docs/california-debt-documentation-evaluation.pdf",
+          "data_point": "Debt collection suits peaked over 300,000 in 2009 and ~250,000 in 2019 across 16 counties"
+        }
+      ],
+      "justification": "The 250K+ figure is plausible but requires careful definition. The 2019 peak across 16 counties was 255,089; the statewide non-UD limited civil total in FY 2022-23 was 265,737, which includes collection, contract, and small claims matters above the small claims threshold. The plan's number is directionally correct for pre-pandemic peaks, and post-pandemic filings are surging again toward those levels per Pew (2025) and the National Center for State Courts (21% contract-case increase in 2022, 15% in 2023). The ~250K figure for statewide debt-collection cases specifically is reasonable as a 2025-2026 run rate, but note that non-collection limited civil cases (e.g., property, employment, small commercial) are included in the broader 265K count.",
+      "impact_if_wrong": "Lower addressable docket means the CA docket engine generates fewer raw leads than projected, slowing Q2-Q3 revenue ramp. Model likely still works given FL + NY + WA, but CA is the single largest state by volume."
+    },
+    {
+      "id": "fl_filing_volume",
+      "claim_in_plan": "Very high lawsuit volume from Midland, LVNV, Portfolio Recovery, Cach (implied by plan text)",
+      "category": "market_size",
+      "verdict": "supported",
+      "midline_estimate": "~200,000–400,000+ county court civil cases annually in FL (contract/indebtedness category), with a significant but unquantifiable share being consumer debt collection; FL does not publish a consumer-debt-specific filing count",
+      "evidence": [
+        {
+          "source": "NCAJ Consumer Debt Florida (November 2024)",
+          "url": "https://ncaj.org/sites/default/files/2024-11/ConsumerDebtNCAJFlorida.pdf",
+          "data_point": "Florida does not collect or publish statewide data specifically on consumer debt lawsuits. The closest category is 'contract and indebtedness.' Score: 0/3 on data transparency benchmark."
+        },
+        {
+          "source": "CCOC Florida Annual Report CFY 2022-23",
+          "url": "https://flccoc.org/wp-content/uploads/2024/01/CCOC-Annual-Report-CFY-2022-23.pdf",
+          "data_point": "County civil revenues saw year-over-year increase of $20.1 million in CFY 2022-23, suggesting elevated filings volume; county civil saw largest dollar increase of any court division."
+        },
+        {
+          "source": "January Advisors — Consumer Debt Cases Surging 2024",
+          "url": "https://www.januaryadvisors.com/consumer-debt-cases-are-surging-again-2024/",
+          "data_point": "Consumer debt case filings have surged back to or beyond pre-pandemic levels in 2024 across nearly all jurisdictions studied; Florida is a major debt-buyer litigation state."
+        }
+      ],
+      "justification": "Florida is definitively a high-volume debt-collection state — Midland, Portfolio Recovery, LVNV, and Cach are all aggressive Florida filers. The specific 200K-400K county court civil estimate is based on Florida being the third most populous state and a state with a historically high per-capita debt-lawsuit rate. The hard number cannot be verified against published court statistics because Florida does not disaggregate consumer debt from the broader 'contract and indebtedness' category. A reasonable midline is that FL has a comparable density to CA on a per-capita basis, implying 150,000–300,000 collection cases annually. Post-pandemic surge likely pushes the 2024–2025 figure above pre-pandemic levels.",
+      "impact_if_wrong": "If FL volume is lower than assumed (e.g., 100K-150K), the docket engine's yield in FL will be lower, and FL will not offset potential shortfalls from other states. The model has meaningful FL dependency given the FCCPA counterclaim upside."
+    },
+    {
+      "id": "wa_filing_volume",
+      "claim_in_plan": "WA volume concentrated with Suttell & Hammer, Patenaude & Felix, and a handful of repeat plaintiffs (implied)",
+      "category": "market_size",
+      "verdict": "supported",
+      "midline_estimate": "~40,000–70,000 district court civil cases per year in WA, with consumer debt collection representing a substantial fraction; WA is a meaningfully smaller market than CA or FL",
+      "evidence": [
+        {
+          "source": "Washington State Courts — Caseload Data Portal",
+          "url": "https://www.courts.wa.gov/caseload/",
+          "data_point": "Washington makes district court data available but the online portal does not publish aggregate debt-collection case totals; underlying data requires Excel download. No specific consumer debt count could be extracted from public-facing pages."
+        },
+        {
+          "source": "NCAJ Consumer Debt State Rankings",
+          "url": "https://ncaj.org/state-rankings/consumer-debt",
+          "data_point": "Debt cases made up 42% of civil dockets in 2021 in nine tracked states; Washington's district court handles civil claims ≤$100K and is the primary venue for consumer debt collection."
+        },
+        {
+          "source": "Pew Charitable Trusts — Debt Collection Lawsuits Surge to Pre-Pandemic Highs (Sept. 2025)",
+          "url": "https://www.pew.org/en/research-and-analysis/articles/2025/09/02/debt-collection-lawsuits-surge-to-pre-pandemic-highs",
+          "data_point": "Up to 4.7 million debt collection cases filed nationally in 2022; WA population ~7.9M ≈ 2.4% of national total implies ~110K cases if pro-rata, though WA's rate is likely somewhat lower given lower median debt burden."
+        }
+      ],
+      "justification": "Washington is a smaller but important market. Suttell & Hammer and Patenaude & Felix are among the highest-volume debt-collection law firms in the country, and WA's district courts are the primary venue. A pro-rata estimate based on national volume puts WA around 80K-110K raw cases, but WA has a lower household debt burden relative to FL or CA, and the LVNV/Midland surge is less concentrated here. A midline of 40K-70K consumer debt cases per year is defensible; the plan's 'handful of repeat plaintiffs' characterization is accurate — the WA market is dominated by 5-6 firms, making the docket watchlist highly efficient.",
+      "impact_if_wrong": "WA being a smaller market than projected is the lowest-impact scenario — the plan treats WA as a supplementary market with strong WCPA counterclaim potential rather than a primary volume driver."
+    },
+    {
+      "id": "ny_filing_volume",
+      "claim_in_plan": "NY CCFA has 'dramatically reduced filings and increased dismissal rates' (plan §1.1)",
+      "category": "market_size",
+      "verdict": "supported",
+      "midline_estimate": "NYC Civil Court alone had 101,643 consumer credit case filings in 2019 (pre-CCFA); post-April 2022 CCFA, the 2024 NYC Civil Court total civil filings were 255,911, but the consumer-debt-specific subset has declined materially; midline estimate: statewide consumer debt filings are likely 30-50% lower than pre-CCFA 2019 levels due to the 3-year SOL cutoff eliminating a significant inventory of aged debt",
+      "evidence": [
+        {
+          "source": "NYC Bar Association — Report on Legislation, Consumer Debt Uniformity Act (Feb. 2024)",
+          "url": "https://www.nycbar.org/wp-content/uploads/2024/02/20221201-ConsumerDebtUniformityAct.pdf",
+          "data_point": "101,643 consumer credit lawsuits filed in New York City Civil Courts alone in 2019; default judgments were entered in approximately 39% of those cases."
+        },
+        {
+          "source": "NY Unified Court System 2024 Annual Report",
+          "url": "https://www.nycourts.gov/whatsnew/pdf/24_Annual_Report.pdf",
+          "data_point": "NYC Civil Court total civil filings: 255,911 in 2024 (this is all civil, not just consumer debt; the consumer debt subset is not separately enumerated in the public report)."
+        },
+        {
+          "source": "Cullen & Dykman — CCFA Analysis (March 2022)",
+          "url": "https://www.cullenllp.com/blog/gov-hochuls-new-consumer-credit-fairness-act-goes-into-effect-soon-what-are-the-implications/",
+          "data_point": "CCFA effective April 6/May 6, 2022; new pleading requirements (contract, chain of title, itemized balance, plain-language notice); 3-year SOL replaces 6-year SOL for consumer credit transactions; default judgment requirements dramatically tightened."
+        },
+        {
+          "source": "Lang El Firm — NY Debt Defense Analysis (Jan. 2025)",
+          "url": "https://www.thelangelfirm.com/debt-defense-blog/2025/january/the-heightened-challenges-debt-collectors-face-i/",
+          "data_point": "CCFA has made NY materially harder for debt buyers; many aged-debt cases are now time-barred; pleading failures at filing are now a routine basis for dismissal."
+        }
+      ],
+      "justification": "The plan's characterization of NY as simultaneously high-volume and structurally easier to defeat post-CCFA is accurate but oversimplified. New filings have declined because the CCFA's 3-year SOL cut off a large inventory of 4-6-year-old consumer credit debt that debt buyers had historically pursued. The remaining post-2022 filings are harder for debt buyers to win because of the heightened pleading requirements, but the absolute number of new cases arriving in 2024-2026 is lower than the 2019 peak of 100K+ in NYC alone. The plan's 'force multiplier' thesis depends on a continuing stream of new cases, which are arriving but at lower absolute volumes. The 39% default judgment rate (NYC, 2019) is also far below the national 70% figure, suggesting NY defendants were historically more likely to respond — a pattern that CCFA reinforces.",
+      "impact_if_wrong": "If NY case volume is lower than expected because CCFA compliance by debt buyers has improved (a real risk), the plan's NY revenue contribution will underperform. The plan hedges this risk (§7.2 'NY CCFA compliance becoming uniform') but does not model the revenue impact explicitly."
+    },
+    {
+      "id": "default_judgment_rate",
+      "claim_in_plan": "Defendants rarely respond; plan implies ~70%+ default rate nationally (implicit in the business thesis)",
+      "category": "market_size",
+      "verdict": "supported",
+      "midline_estimate": "National midline: ~70-71% default rate in most jurisdictions; CA-specific: ~91% no-answer rate (5.5% file answers); NY-specific (NYC Civil): ~39% default in 2019 (much lower than national); FL/WA: likely 60-75%, in line with national average",
+      "evidence": [
+        {
+          "source": "Pew Charitable Trusts — Debt Collection Cases During Pandemic (Sept. 2023)",
+          "url": "https://www.pew.org/en/research-and-analysis/articles/2023/09/18/debt-collection-cases-continued-to-dominate-civil-dockets-during-pandemic",
+          "data_point": "More than 70% of debt suits end in default judgment in jurisdictions with available data; Utah District Court was 71% in 2019, Michigan was 63% in 2021."
+        },
+        {
+          "source": "January Advisors — Debt Collection Answer Requirement Study (Dec. 2025)",
+          "url": "https://www.januaryadvisors.com/debt-collection-answer-requirement/",
+          "data_point": "Only 5.5% of Californians sued for debt filed an answer in recent years; among served cases without answers: 78% default judgments, 22% dismissals."
+        },
+        {
+          "source": "NYC Bar Association — Consumer Debt Uniformity Act Report",
+          "url": "https://www.nycbar.org/wp-content/uploads/2024/02/20221201-ConsumerDebtUniformityAct.pdf",
+          "data_point": "Default judgments entered in approximately 39% of consumer credit cases filed in NYC Civil Court in 2019; ~96% of defendants are unrepresented."
+        }
+      ],
+      "justification": "The national ~70% default rate is well-supported by Pew data and is consistent with the business thesis. However, CA's 91% no-answer rate (implying an even higher practical default rate since many 'no answer' cases get dismissed rather than defaulted) and NY's lower 39% default rate (due to mandatory defendant notices and plaintiff compliance scrutiny) create material variation by state. The plan's thesis is more powerful in CA and FL/WA than in NY, where the defendant population is more responsive and the plaintiff has higher procedural hurdles.",
+      "impact_if_wrong": "If post-pandemic defendant response rates increase (due to increased consumer awareness or court initiatives), the addressable 'served defendant who has not yet retained counsel' pool shrinks. A 5-percentage-point increase in answer rates nationally would reduce the TAM by roughly 7%."
+    },
+    {
+      "id": "flat_fee_pricing",
+      "claim_in_plan": "$1,200–$1,800 average flat-fee revenue per case (Tier 1: $750-$1,250; Tier 2: $1,500-$2,500)",
+      "category": "unit_economics",
+      "verdict": "supported",
+      "midline_estimate": "$1,200–$2,000 is the market range for full-service debt defense representation in CA, FL, WA, and NY; $750-$1,250 for negotiation-only and $1,500-$2,500 for full litigation defense with discovery are consistent with published benchmarks",
+      "evidence": [
+        {
+          "source": "Nextlegal.com Debt Lawyer Cost Guide 2025",
+          "url": "https://nextlegal.com/how-much-does-it-cost-for-a-debt-lawyer-in-2025/",
+          "data_point": "Debt collection defense legal costs: lawsuit response services $1,500-$3,000; full trial representation $3,000-$7,000."
+        },
+        {
+          "source": "Southeast Client Services — Debt Settlement Lawyer Cost (Sept. 2025)",
+          "url": "https://www.southeastclientservicesinc.com/blog/debt-settlement-lawyer-cost",
+          "data_point": "Flat fees for debt settlement: simple cases approximately $500-$1,500 per debt or creditor; complex cases $1,500-$5,000."
+        },
+        {
+          "source": "OneFlatRate Legal Pricing Guide",
+          "url": "https://oneflatrate.com/legal-pricing-guide.html",
+          "data_point": "Chapter 7 bankruptcy flat fee: $1,200-$2,800 median, providing a useful adjacent benchmark for single-matter resolution."
+        }
+      ],
+      "justification": "The $1,200-$1,800 blended average across tiers is achievable and within market range for the four states. The plan's Tier 1 ($750-$1,250) is at the low end of the market for negotiation-only representation — some firms charge as little as $500 for pre-answer settlement work, but firms with a technology-enabled, higher-conversion model can command the upper half of the range. The Tier 2 ($1,500-$2,500) is firmly in the middle of the market. The risk is that a productized, volume-oriented firm may face downward pressure on pricing from lower-cost incumbents and non-attorney legal services providers. The blended average of ~$1,500-$1,600 is the defensible midline.",
+      "impact_if_wrong": "A 10% reduction in average revenue per case (from $1,500 to $1,350) would reduce gross Year 1 revenue by ~$335K at the 2,220-file target, a ~9% reduction in base-case revenue."
+    },
+    {
+      "id": "direct_mail_conversion_rate",
+      "claim_in_plan": "3-5% conversion rate from cold direct mail to served defendants",
+      "category": "conversion",
+      "verdict": "overstated",
+      "midline_estimate": "1.5–3.5% overall response rate from cold direct mail to served defendants; actual retainer conversion rate (retained client / mailers sent) is likely 1–2.5% for cold-list defendants, potentially 2.5–4% if the mail arrives within 7-10 days of service and contains case-specific personalization",
+      "evidence": [
+        {
+          "source": "Mailpro — Direct Mail Response Rates 2026 Benchmarks",
+          "url": "https://www.mailpro.org/post/direct-mail-response-rates",
+          "data_point": "Average direct mail response rate ranges from 2-4% for general campaigns; well-targeted campaigns on highly relevant topics can yield 10%+; prospect list mailings average 1-2%."
+        },
+        {
+          "source": "DMA / Chief Marketer Response Rate Report",
+          "url": "https://www.chiefmarketer.com/direct-mail-gets-most-response-but-email-has-highest-roi-dma/",
+          "data_point": "Letter-sized direct mail to prospects: 1.28% response rate (DMA historical benchmark); oversized direct mail to house lists: 3.95%."
+        },
+        {
+          "source": "Above The Bar Marketing — Hidden Revenue Drain in Law Firm Intake",
+          "url": "https://abovethebarmarketing.com/when-minutes-cost-six-figures-the-hidden-revenue-drain-in-law-firm-intake/",
+          "data_point": "Industry benchmarks show only 15-25% of legal service inquiries convert to paid representation; nationwide average conversion from new call to retained case is 7%, ranging from 3% for poorly optimized processes to 30% for firms with sophisticated intake systems."
+        },
+        {
+          "source": "Ballard Spahr — Mass Mailings by Debt Relief Law Firms (March 2023)",
+          "url": "https://www.ballardspahr.com/insights/blogs/2023/03/podcast-a-deep-dive-into-mass-mailings-by-debt-relief-law-firms",
+          "data_point": "Debt relief law firm mass mailings generate responses but specific conversion-to-retainer rates are not published; the space is competitive with multiple firms often targeting the same defendants."
+        }
+      ],
+      "justification": "The plan's 3-5% conversion rate is optimistic versus industry-wide direct mail benchmarks (1-2% for cold prospect lists). However, served defendants are an unusually high-intent audience — they have an imminent legal deadline, have already been processed through the compliance gate (so no minors, deceased, etc.), and the mailer contains their specific case information. This personalization factor likely doubles or triples the base response rate relative to generic legal marketing. A realistic midline for this audience is 1.5-3.5% from the initial direct mail touch, rising to 2.5-4% with the full 5-touch sequence. The plan's lower bound (3%) is achievable with excellent personalization and timing; the upper bound (5%) requires best-in-class execution. The plan's unit economics use 3-5% for revenue projection, which should use the midpoint (4%) only with heavy qualification.",
+      "impact_if_wrong": "If actual conversion is 2% vs. the modeled 3-5%, CAC rises from $75-125 to $185-225 per retained client, reducing the docket engine's margin advantage over paid search by roughly 40-50%. The model still works but the docket engine's 'one-third of paid search CAC' claim becomes 'roughly comparable to paid search.'"
+    },
+    {
+      "id": "lob_direct_mail_cost",
+      "claim_in_plan": "$1.20/piece fully loaded direct mail cost via Lob for attorney letterhead mailers",
+      "category": "unit_economics",
+      "verdict": "understated",
+      "midline_estimate": "$1.50–$2.50 per piece for a compliant attorney-letterhead #10 window envelope mailer at moderate volumes (under 5,000/month); at high volume with Enterprise pricing, the $1.20 target may be achievable but requires negotiation",
+      "evidence": [
+        {
+          "source": "Lob Pricing Page (current)",
+          "url": "https://www.lob.com/pricing",
+          "data_point": "Developer Plan: $0.806/letter; Startup Plan: $0.636/letter; Growth Plan: $0.606/letter — these are base print+postage starting prices. Attorney-specific letterhead with custom design, first-class postage, and additional compliance elements will add cost."
+        },
+        {
+          "source": "Lob Direct Mail FAQs",
+          "url": "https://www.lob.com/content/direct-mail-faqs",
+          "data_point": "Redelivery and operation costs are steep for address errors; the base pricing does not include design customization or variable-data printing beyond standard merge fields."
+        }
+      ],
+      "justification": "Lob's published pricing starts at $0.61-0.81 per letter for print-plus-postage at the Growth plan level. However, the plan's $1.20 figure is described as 'fully loaded,' presumably adding: (1) first-class postage premium over USPS standard (~$0.20-0.30 additional), (2) attorney letterhead custom design and compliance elements, (3) variable-data printing for case-specific information, and (4) Lob platform fees. At high volume with Enterprise pricing, the all-in cost can approach $1.00-1.20. At moderate volumes (under 5,000/month in year 1), the fully loaded cost is more likely $1.50-2.00 per piece. The $1.20 figure is achievable at scale (10K+ pieces/month with Enterprise pricing) but is probably 25-40% understated for the first 6-9 months of operations. FL Bar also requires filing each mailer with the Bar ($150/filing), which adds a compliance overhead cost not reflected in the per-piece cost.",
+      "impact_if_wrong": "If per-piece cost is $1.80 instead of $1.20, total direct mail cost per 1,000 filings monitored rises from $586 to $878 — a $292 increase. On 10,000 filings/month at scale, this is an additional $2,920/month in mail costs, a relatively modest impact on overall economics but meaningful at high volume."
+    },
+    {
+      "id": "skip_trace_match_rate",
+      "claim_in_plan": "~65% skip-trace match rate",
+      "category": "unit_economics",
+      "verdict": "supported",
+      "midline_estimate": "55-75% right-party contact match rate depending on data provider; BatchSkipTracing/BatchData claims a 76% right-party contact rate; TLO/IDI achieve 88-95% phone number hit rates but at higher cost; $0.25/record is at the low end of pricing for reliable services",
+      "evidence": [
+        {
+          "source": "BatchData — Skip Tracing Comparison (TLO vs. IDI vs. BatchData)",
+          "url": "https://batchdata.io/blog/batchdata-skip-tracing-comparison-tlo-idi",
+          "data_point": "IDI: 88-95% hit rate for phone numbers, 75-85% for email; TLO: similar high-end rates. BatchData: 76% right-party contact rate (described as 3x industry average, implying industry average ~25%). Standard IDI pricing: $0.50-$2.00 per record."
+        }
+      ],
+      "justification": "The plan's 65% skip-trace match rate is within the realistic range for a high-quality provider. Note the distinction between 'phone number hit rate' (88-95% for TLO/IDI) and 'right-party contact rate' (BatchData at 76%, industry average ~25%). The $0.25/record pricing is plausible only for bulk volume with a BatchSkipTracing-class provider — TLO and IDI standard pricing is $0.50-$2.00/record. The 65% figure is a reasonable blended rate across cases where the defendant has moved, uses a cell phone exclusively, or has limited data footprint. The compliance gate (removing deceased, minors, etc.) increases the usable match rate of the surviving pool above 65%. This assumption is defensible.",
+      "impact_if_wrong": "If match rate drops from 65% to 50%, the number of reachable defendants per 1,000 monitored falls from 488 to 375, reducing revenue per 1,000 monitored from $22,500-$37,500 to ~$17,300-$28,875. A material but not fatal reduction."
+    },
+    {
+      "id": "cac_direct_mail",
+      "claim_in_plan": "$75-$125 CAC per retained client (approximately one-third of paid search CAC)",
+      "category": "unit_economics",
+      "verdict": "overstated",
+      "midline_estimate": "$150–$250 CAC per retained client is a more defensible midline for the docket-engine channel in Year 1; paid search CAC for legal/debt defense is $131-$230 per lead (not per retained client), suggesting total paid-search CAC is $400-$1,000 per retained client",
+      "evidence": [
+        {
+          "source": "Flyweel — Cost Per Lead Benchmarks 2025",
+          "url": "https://www.flyweel.co/blog/lead-gen-cpl-cac-benchmark-index-2025",
+          "data_point": "Google Ads CPL for Attorneys & Legal Services: $131.63 (5.09% CVR from click to lead). At $131.63/lead and 7% lead-to-retained conversion: implied CAC = $131.63/0.07 = ~$1,880. At 15-25% conversion from qualified lead: $131.63/0.20 = ~$658 CAC."
+        },
+        {
+          "source": "WordStream — Most Expensive Keywords in Google Ads",
+          "url": "https://www.wordstream.com/articles/most-expensive-keywords",
+          "data_point": "'Attorney' keyword CPC: $47.07; 'Lawyer' keyword CPC: $42.51. Legal industry average CPA: $88.18 (search). Debt-defense specific keywords likely $50-$150 CPC."
+        },
+        {
+          "source": "Above The Bar Marketing — Industry Benchmarks",
+          "url": "https://abovethebarmarketing.com/when-minutes-cost-six-figures-the-hidden-revenue-drain-in-law-firm-intake/",
+          "data_point": "Nationwide average conversion from new call to retained case: 7%; firms with sophisticated intake: up to 30%."
+        }
+      ],
+      "justification": "The plan's math ($1,850 total cost / ~15-25 retained clients = $74-$123 per retained client) is internally consistent but relies on the 3-5% conversion rate assumption already flagged as optimistic. Using a midline 2% conversion on 488 reachable defendants = ~10 retained clients per 1,000 monitored, making CAC approximately $185. At 3% (the lower bound of the plan's range): 14-15 retained clients = ~$123, consistent with the plan's upper bound. The comparison to paid-search CAC is directionally correct (paid-search CAC for legal is likely $400-$1,000+ per retained client, not just $75-$200), but the plan's $75-$125 docket-engine CAC requires optimistic conversion assumptions. A $150-$250 CAC is the more honest midline for Year 1, improving to $100-$175 at scale as the machine is tuned.",
+      "impact_if_wrong": "The core model (docket engine is more capital-efficient than paid search) survives even at $200 CAC. The precise $75-$125 figure is marketing copy more than a financial commitment — the model's sensitivity is more driven by conversion rate than by the cost-per-contact."
+    },
+    {
+      "id": "counterclaim_revenue",
+      "claim_in_plan": "$700K-$1.4M counterclaim/standalone consumer claim recoveries by Month 12 on 2,000-3,500 active case book",
+      "category": "financial",
+      "verdict": "overstated",
+      "midline_estimate": "$300K-$700K in Year 1 counterclaim recoveries is more defensible; the $700K-$1.4M range requires: (a) a 15% Tier 3 mix as projected, (b) ~$3,500-$5,000 average counterclaim recovery per resolved matter, and (c) resolution of Year 1 Tier 3 cases within Year 1 — all three are optimistic for a firm's first full operating year",
+      "evidence": [
+        {
+          "source": "Business plan own Statutory Recovery Cheat Sheet (§3.1)",
+          "url": "N/A — internal document",
+          "data_point": "FDCPA typical settlement: $2,500-$5,000; Rosenthal Act: $3,500-$7,500; FCCPA: $3,500-$7,500; WCPA: $5,000-$20,000; GBL §349: $3,500-$10,000."
+        },
+        {
+          "source": "Jimerson Birr — FCCPA/FDCPA Statutory Damages Analysis (Jan. 2023)",
+          "url": "https://www.jimersonfirm.com/blog/2023/01/statutory-damages-fccpa-fdcpa/",
+          "data_point": "FCCPA and FDCPA statutory damages are capped at $1,000 per action (not per violation); FCCPA also allows actual damages, injunctive relief, and punitive damages under Fla. Stat. §559.77(2)."
+        },
+        {
+          "source": "CFPB FDCPA Annual Report 2024",
+          "url": "https://www.consumerfinance.gov/data-research/research-reports/fair-debt-collection-practices-act-cfpb-annual-report-2024/",
+          "data_point": "FDCPA enforcement remains active; attorney fee awards in FDCPA cases often dwarf statutory damages and drive settlement value."
+        }
+      ],
+      "justification": "The statutory settlement ranges cited in the plan are accurate. The issue is timing and selectivity. Tier 3 cases (FDCPA/Rosenthal/FCCPA/WCPA counterclaims) require: (1) intake screening to identify viable claims, (2) filing of the counterclaim, (3) discovery, (4) settlement negotiation or trial, and (5) collection. The average FDCPA case takes 6-18 months to resolve. A firm beginning Tier 3 case intake in Month 3-4 (as projected in Phase 3) is unlikely to see significant recoveries before Month 9-12 at the earliest. At 15% of 2,220 Year 1 files = 333 Tier 3 cases; if 50% resolve with recovery in Year 1 (optimistic) at an average of $4,000 net = $666K. The plan's $700K-$1.4M range requires more than 50% resolution in Year 1, which is unlikely for a start-up firm still building its negotiation reputation with opposing counsel.",
+      "impact_if_wrong": "Counterclaim revenue arriving in Year 2 rather than Year 1 creates a cash flow gap in Q3-Q4. If counterclaim revenue is $300K rather than $700K in Year 1, actual gross revenue would be ~$3.35M vs. the $3.75M base case, a $400K (11%) shortfall."
+    },
+    {
+      "id": "ny_ccfa_dismissal_rate",
+      "claim_in_plan": "CCFA has 'dramatically reduced filings and increased dismissal rates'; NY is 'highest expected-margin state'",
+      "category": "market_size",
+      "verdict": "supported",
+      "midline_estimate": "NY CCFA has materially reduced filings (particularly of aged debt) and meaningfully increased plaintiff pleading failures; however, 'dramatically' overstates the ongoing impact now that debt buyers have had 3+ years to adapt their pleading practices",
+      "evidence": [
+        {
+          "source": "Lang El Firm — NY Debt Defense Blog (Jan. 2025)",
+          "url": "https://www.thelangelfirm.com/debt-defense-blog/2025/january/the-heightened-challenges-debt-collectors-face-i/",
+          "data_point": "CCFA has made NY harder for debt buyers; major debt buyers have entered agreements preventing pursuit of time-barred debts; pleading failures are now common grounds for dismissal."
+        },
+        {
+          "source": "Receivables Management Association International — FCJIA Update (Oct. 2025)",
+          "url": "https://rmaintl.org/member-alert-federal-court-upholds-new-yorks-retroactive-reduction-of-consumer-debt-judgment-interest-rate/",
+          "data_point": "Federal court upheld NY Fair Consumer Judgment Interest Act in September 2025, reducing judgment interest from 9% to 2% retroactively — further reducing the economics of collecting old NY judgments."
+        },
+        {
+          "source": "Cullen & Dykman CCFA Analysis",
+          "url": "https://www.cullenllp.com/blog/gov-hochuls-new-consumer-credit-fairness-act-goes-into-effect-soon-what-are-the-implications/",
+          "data_point": "Chain-of-title documentation requirements, charge-off statement requirement, and SOL affidavit requirements are all per-filing obligations that are difficult for debt buyers to systematically satisfy."
+        }
+      ],
+      "justification": "The plan's assertion that NY is the 'highest expected-margin state' is directionally correct but needs qualification. The CCFA advantages are most powerful for cases filed by Tier-1 debt buyers (Midland, LVNV, Portfolio Recovery) who bought portfolios of aged debt without clean documentation chains. By 2024-2026, savvier debt buyers have cleaned up their documentation practices, reducing the dismissal-rate advantage for new filings. However, NY retains structural advantages: the 3-year SOL continues to shrink the viable debt universe, the judgment interest cap at 2% reduces buyer incentive for protracted litigation, and the ongoing documentation requirements create opportunities for skilled counsel. The plan's risk notation (CCFA compliance becoming uniform) accurately identifies the erosion risk.",
+      "impact_if_wrong": "If NY dismissal advantages erode faster than projected, NY's contribution margin per case declines and the state becomes closer to FL/WA economics. Still profitable, but not the 'force multiplier' the plan envisions."
+    },
+    {
+      "id": "wcpa_treble_damages_cap",
+      "claim_in_plan": "WCPA treble damages up to $25K + fees",
+      "category": "compliance",
+      "verdict": "supported",
+      "midline_estimate": "Verified: RCW 19.86.090 expressly caps increased damage awards for violations of RCW 19.86.020 (unfair/deceptive acts) at three times actual damages, not to exceed $25,000; attorney fees are mandatory to prevailing consumer",
+      "evidence": [
+        {
+          "source": "RCW 19.86.090 — Washington Consumer Protection Act (official text)",
+          "url": "https://app.leg.wa.gov/rcw/default.aspx?cite=19.86.090",
+          "data_point": "Court may increase award up to three times actual damages sustained, provided the increased damage award for violation of RCW 19.86.020 may not exceed $25,000. Plus costs of suit including reasonable attorney fee."
+        },
+        {
+          "source": "Seattle Litigation Group — Consumer Protection Claims (Oct. 2025)",
+          "url": "https://www.seattlelitigation.com/blogs/consumer-protection-claims-can-be-costly",
+          "data_point": "RCW 19.86.090 treble damages and attorney fees confirmed as mandatory components of successful CPA claims."
+        }
+      ],
+      "justification": "The plan's recitation of WCPA treble damages up to $25K is legally accurate per the current version of RCW 19.86.090. The $25K cap applies specifically to the increased/trebled portion, not to actual damages — a creditor who commits a CPA violation that causes $30,000 in actual damages would owe $30K actual + $25K trebled portion + attorney fees. The plan correctly notes this as a ceiling, not a floor. The practical reality is that most consumer debt WCPA claims arise from relatively modest actual damages (the debt balance plus incidental costs), so the $25K cap frequently binds in practice. For a $5,000 debt-collection suit with minor WCPA violations, actual damages might be $500-$2,000, trebled to $1,500-$6,000 plus attorney fees — not the $25K maximum.",
+      "impact_if_wrong": "No material impact — this assumption is accurate. The business plan correctly reflects the statute."
+    },
+    {
+      "id": "fccpa_punitives",
+      "claim_in_plan": "FCCPA carries fee-shift + punitives (§559.77); typical settlement $3,500-$7,500",
+      "category": "compliance",
+      "verdict": "supported",
+      "midline_estimate": "FCCPA punitives are available under Fla. Stat. §559.77(2) but are subject to Florida's general punitive damage caps: 3x compensatory or $500,000, whichever is greater (with higher caps for intentional misconduct). Typical FCCPA settlements of $3,500-$7,500 are accurate — statutory cap is $1,000 for statutory damages per action; punitives add upside but are litigated not settled routinely",
+      "evidence": [
+        {
+          "source": "Jimerson Birr — FCCPA/FDCPA Statutory Damages (Jan. 2023)",
+          "url": "https://www.jimersonfirm.com/blog/2023/01/statutory-damages-fccpa-fdcpa/",
+          "data_point": "FCCPA §559.77 allows: actual damages + up to $1,000 statutory damages + attorney fees + court costs + injunctive relief + punitive damages; but statutory damages are capped at $1,000 per action, not per violation."
+        },
+        {
+          "source": "Florida Statutes §768.73 — General Punitive Damage Cap",
+          "url": "https://www.leg.state.fl.us/statutes/index.cfm?App_mode=Display_Statute&URL=0700-0799%2F0768%2FSections%2F0768.73.html",
+          "data_point": "Florida general punitive damages cap: greater of 3x compensatory damages or $500,000. For intentional misconduct for financial gain: 4x compensatory or $2M. For specific intent to harm: no cap."
+        }
+      ],
+      "justification": "The plan's characterization of FCCPA punitives is accurate in kind but requires calibration in magnitude. The FCCPA allows punitive damages but most FCCPA cases settle pre-trial (at the $3,500-$7,500 range cited) because: (1) statutory damages are capped at $1,000; (2) attorney fees are the primary driver of settlement leverage (opposing counsel will pay reasonable fees to avoid further litigation costs); and (3) proving actual punitives-worthy misconduct (intentional or grossly negligent) requires stronger factual development than a typical intake will support. The plan's settlement range is accurate for average cases; outlier cases with egregious collector conduct can reach $15,000-$50,000 in settlements.",
+      "impact_if_wrong": "No material impact on the model — the $3,500-$7,500 range is the correct benchmark for underwriting the Tier 3 pipeline."
+    },
+    {
+      "id": "iolta_cle_ongoing_costs",
+      "claim_in_plan": "Multi-state bar admission completed; ongoing IOLTA + CLE + dues cost included in 'Other' category at $3,500/month",
+      "category": "financial",
+      "verdict": "understated",
+      "midline_estimate": "Annual ongoing compliance cost per attorney for 4-state practice: ~$3,500-$5,500/year in dues + ~$1,500-$2,500/year in CLE costs = ~$5,000-$8,000/year per partner; for 3 partners across 4 states = $15,000-$24,000/year total, or ~$1,250-$2,000/month — within the $3,500/month 'Other' budget if CLE is shared/efficient, but tight",
+      "evidence": [
+        {
+          "source": "State Bar of California — Fees & Payment 2025",
+          "url": "https://www.calbar.ca.gov/legal-professionals/maintaining-compliance/administrative-compliance/fees-payment",
+          "data_point": "Active CA bar license fee: $598/year"
+        },
+        {
+          "source": "Florida Bar — Fee Season 2025",
+          "url": "https://www.floridabar.org/the-florida-bar-news/bar-fee-season-is-underway-members-may-pay-their-annual-fees-online-now/",
+          "data_point": "Active FL bar dues: $265/year"
+        },
+        {
+          "source": "WSBA — 2026 License Fees",
+          "url": "https://www.wsba.org/for-legal-professionals/license-renewal/license-fees",
+          "data_point": "Active WA license fee: $468 + $20 CPF = $488/year (2025 rate)"
+        },
+        {
+          "source": "New York Judiciary Law §468-A (2025)",
+          "url": "https://law.justia.com/codes/new-york/jud/article-15/468-a/",
+          "data_point": "NY biennial registration fee: $375 ($187.50/year amortized)"
+        },
+        {
+          "source": "Inoriseo — CLE Requirements by State",
+          "url": "https://inoriseo.com/legal-insights/cle-requirements-by-state/",
+          "data_point": "CA: 25 hrs/3 years (incl. 4 ethics); FL: 33 hrs/3 years (incl. 5 ethics, 3 technology); WA: 45 credits/3 years; NY: 24 hrs/2 years (incl. 4 ethics, 1 cybersecurity). CLE course costs: typically $50-$200 per credit hour for commercially produced CLE."
+        }
+      ],
+      "justification": "Per-partner annual bar dues across 4 states: $598 (CA) + $265 (FL) + $488 (WA) + $187.50 (NY) = $1,538.50/year. For 3 partners = $4,616/year. CLE requirements are more significant: CA 25 hrs/3yr, FL 33 hrs/3yr, WA 45 credits/3yr, NY 24 hrs/2yr means each partner must complete substantial annual CLE hours. If purchased commercially at $50-$100/hr, CLE costs run $1,000-$2,500 per attorney per year across all four states — but many hours can be shared/overlapping between jurisdictions. IOLTA account setup and maintenance costs are minimal (typically $0 in bank fees per state bar agreements, plus admin time). The $3,500/month 'Other' line item must cover bar compliance counsel engagement, CLE, dues, legal research subscriptions, and other costs — it is tight but not impossible if CLE is obtained efficiently.",
+      "impact_if_wrong": "If CLE and compliance costs exceed budget by $2,000-$3,000/month (including bar advertising counsel retainers, which the plan recommends engaging in all 4 states), the 'Other' line needs to be $5,500-$6,500/month. The plan's $3,500 is probably low by $1,500-$2,500/month at operating scale."
+    },
+    {
+      "id": "solicitation_rules_compliance",
+      "claim_in_plan": "NY 22 NYCRR §1200.41-a 30-day waiting period applies to PI/wrongful death only — does NOT apply to consumer debt (plan §4.5)",
+      "category": "compliance",
+      "verdict": "supported",
+      "midline_estimate": "Verified: NY 22 NYCRR §1200.41-a expressly applies only to 'incidents involving potential claims for personal injury or wrongful death' — consumer debt solicitations are not covered by the 30-day moratorium. The plan's reading is correct. However, NY RPC 7.3(b) governs written solicitations to consumer debt defendants and requires 'ATTORNEY ADVERTISING' label and other disclosures.",
+      "evidence": [
+        {
+          "source": "22 NYCRR §1200.41-a (official court rules text)",
+          "url": "https://www.nycourts.gov/LegacyPDFS/rules/jointappellate/1200-41-a_final_text.pdf",
+          "data_point": "Rule is expressly limited to 'incidents involving potential claims for personal injury or wrongful death' — consumer debt defendants are not subject to the 30-day waiting period."
+        },
+        {
+          "source": "NY Comp. Codes R. & Regs. Tit. 22 §1200.7.3 — Solicitation Rules",
+          "url": "https://www.law.cornell.edu/regulations/new-york/22-NYCRR-1200.7.3",
+          "data_point": "Written solicitations to specific recipients (including served debt defendants) must comply with RPC 7.3 requirements including 'ATTORNEY ADVERTISING' on envelope and first page; real-time electronic contact prohibited; written communications are permissible with required disclosures."
+        }
+      ],
+      "justification": "The plan's legal analysis of NY solicitation rules is correct on the key point: the 30-day waiting period does not apply to consumer debt cases. However, NY RPC 7.3 compliance for written solicitations to served debt defendants is more complex than the plan implies — the plan correctly identifies the ATTORNEY ADVERTISING requirement, but NY also imposes font-size requirements, specific content requirements, and the filing/record-retention obligations under NY RPC 7.5. One area the plan does not address: NY requires copies of all written solicitations to be retained for 3 years and available for bar inspection. This is an operational compliance obligation that the docket-engine mailer workflow must systematically capture.",
+      "impact_if_wrong": "The plan's substantive reading is correct. The compliance infrastructure (record retention of all mailers) is an operational requirement that must be built into the docket engine from Day 1."
+    },
+    {
+      "id": "fl_bar_direct_mail_filing",
+      "claim_in_plan": "FL Bar 4-7.18 requires advertisement filing; plan acknowledges this (§4.5)",
+      "category": "compliance",
+      "verdict": "supported",
+      "midline_estimate": "Verified: Florida Bar Rule 4-7.18 requires all unsolicited direct mail and direct email advertisements to be filed for review at least 20 days before first use; filing fee is $150 per advertisement timely filed ($250 if late). Each new version of the mailer (including case-specific personalization that changes the mailer template) must be filed and approved.",
+      "evidence": [
+        {
+          "source": "Florida Bar — Advertising Filing Requirements",
+          "url": "https://www.floridabar.org/ethics/etad/advertising-filing-requirements/",
+          "data_point": "All unsolicited direct mail must be filed at least 20 days before use; $150 per timely filing; $250 late; must include copy of advertisement, sample envelope, all enclosures; every unsolicited direct mail must always be filed (no tombstone exemption)."
+        }
+      ],
+      "justification": "The plan correctly identifies the FL Bar filing requirement. The key operational implication not fully addressed in the plan is that: (1) each substantially different version of the mailer requires a new filing; (2) the pre-filing period (20 days minimum) means the docket engine cannot send dynamic, case-specific personalized letters without either pre-approving a library of template versions or using a single approved template with only merge-field customization. The plan's ambition of sending a 'personalized' letter within 1-2 days of docket entry is operationally constrained in Florida by the need to use only pre-approved templates. The firm will need to file a general template and use strict variable-data merge fields, not substantively different versions.",
+      "impact_if_wrong": "Failing to file a new mailer version with the FL Bar before use is a bar rule violation. The operational constraint is real but manageable with proper template management and a pre-approved library."
+    },
+    {
+      "id": "tier3_hybrid_fee_permissibility",
+      "claim_in_plan": "Tier 3 hybrid flat-fee + contingency requires Rule 1.5/state-bar review; plan acknowledges this (§2.1 and §7.1)",
+      "category": "compliance",
+      "verdict": "supported",
+      "midline_estimate": "Hybrid flat-fee + contingency arrangements are permissible in CA, FL, WA, and NY with proper disclosures, but each state has specific requirements: CA requires written agreement with specific disclosures per B&P §6147/6148; WA RPC 1.5 requires written contingent fee agreement signed by client; FL Rule 4-1.5 requires written agreement; NY Rule 1.5 requires written agreement. The plan's approach is legally permissible but requires meticulous engagement letters.",
+      "evidence": [
+        {
+          "source": "CA State Bar — Rule 1.5 Executive Summary",
+          "url": "https://www.calbar.ca.gov/Portals/0/documents/rules/Rule_1.5-Exec_Summary-Redline.pdf",
+          "data_point": "CA Rule 1.5 prohibits flat fees from being deemed 'earned on receipt' unless specific conditions are met; flat fee must be placed in trust unless written agreement specifies otherwise; hybrid arrangements are permissible with written engagement."
+        },
+        {
+          "source": "WA RPC 1.5 (official text)",
+          "url": "https://www.courts.wa.gov/court_rules/pdf/RPC/GA_RPC_01_05_00.pdf",
+          "data_point": "WA RPC 1.5: flat fee for specified services is permissible; if part flat + part hourly, advance portion goes to trust; contingent fee agreements must be in writing signed by client. Hybrid arrangements expressly addressed."
+        }
+      ],
+      "justification": "The plan correctly identifies the need for state-bar review of Tier 3 arrangements. All four states permit hybrid flat-fee + contingency under Rule 1.5 equivalents with proper written disclosures. The key risks are: (1) CA's requirement that flat fees be placed in trust unless the engagement letter explicitly provides otherwise and specifies the flat fee is 'true retainer' — with debt defense, the flat fee is typically earned as services are performed, not as a true retainer; (2) NY's more detailed written solicitation requirements for contingent fee arrangements (NY RPC 1.5(c) requires specific written language); (3) the plan's use of a 40% contingency on the recovery portion is within normal range but should be benchmarked against prevailing rates in the consumer protection bar to avoid a reasonableness challenge.",
+      "impact_if_wrong": "Failure to structure Tier 3 engagement letters correctly could create fee disgorgement risks. This is a documentation/compliance risk, not a business model risk. Bar advertising counsel review of the engagement letter template is explicitly called for in the plan and is the correct mitigant."
+    },
+    {
+      "id": "monthly_burn_rate",
+      "claim_in_plan": "~$217,800/month burn at scale (25+ headcount + full tech stack)",
+      "category": "financial",
+      "verdict": "understated",
+      "midline_estimate": "~$240,000–$285,000/month at fully operational steady state with 25+ headcount; primary understatements are in (a) associate attorney compensation, (b) insurance (malpractice multi-state rider), and (c) the docket engine infrastructure at scale",
+      "evidence": [
+        {
+          "source": "NALP 2025 Associate Salary Survey",
+          "url": "https://www.nalp.org/0625research",
+          "data_point": "Median first-year associate base salary at firms ≤250 lawyers: $150,000. Small consumer law firms paying $80K-$100K/year to associates; Indeed data for collection law firm associates: $83,707 average."
+        },
+        {
+          "source": "BLS Paralegal Salary Data (2022)",
+          "url": "https://www.paralegal411.org/salaries/",
+          "data_point": "CA: $76,080 average; WA: $72,590; NY: $69,860 annual paralegal salary. At 10 paralegals blended across four high-cost states: $70-76K average base = $700-760K annually = $58K-$63K/month base; loaded at 1.2x-1.3x = $70-82K/month vs. plan's $50K/month."
+        }
+      ],
+      "justification": "The plan's $50,000/month for 10 paralegals implies $60,000/year per paralegal. BLS/NALA data shows CA paralegals average $76,080/year, WA $72,590, NY $69,860, FL $52,000-$60,000. A blended 10-paralegal team across these markets would average $65,000-$70,000/year in base salary, plus ~25% benefits loading = $81,000-$87,500 fully loaded per paralegal, or $67,500-$72,900/month for 10 paralegals — roughly $17,000-$23,000/month higher than the plan's $50,000 figure. Similarly, associate attorney compensation at $28,000/month for 3-4 associates implies $84,000-$112,000/year per associate, which is achievable for consumer law associates but tight in high-cost markets (NY, CA). Insurance at $2,800/month for multi-state malpractice coverage for a 3-partner + 3-4 associate firm handling consumer litigation is likely 20-40% understated (multi-state malpractice with a TCPA/FDCPA practice typically runs $15,000-$25,000/year for a small firm, not $33,600).",
+      "impact_if_wrong": "A $240K-$285K actual monthly burn vs. $217.8K projected means the runway calculation of $2M → 9 months shortens to approximately 7-8 months. The capital planning recommendation in §11 should be revised to $2.5M in initial runway capital."
+    },
+    {
+      "id": "year1_revenue_model",
+      "claim_in_plan": "Year 1 revenue $3.75M base case (Q1: $135K, Q2: $465K, Q3: $1.05M, Q4: $2.1M) from 2,220 new files",
+      "category": "financial",
+      "verdict": "overstated",
+      "midline_estimate": "$2.5M–$3.2M is a more defensible Year 1 base case; the Q4 ramp to $2.1M in a single quarter implies 1,250 new files at ~$1,680 average, which requires the docket engine to be fully operational and converting at projected rates by Month 7-8 — an aggressive timeline for a new firm",
+      "evidence": [
+        {
+          "source": "Business plan own Revenue Build (§6.2)",
+          "url": "N/A — internal document",
+          "data_point": "Q4: 1,250 new files, 1,850 active, $2.1M gross. Implies $1,680/file average. This requires Tier 2 + Tier 3 mix to average up significantly from Q1-Q2."
+        },
+        {
+          "source": "January Advisors — Most People Sued for Debt Never Get Day in Court (Dec. 2025)",
+          "url": "https://www.januaryadvisors.com/debt-collection-answer-requirement/",
+          "data_point": "Only 5.5% of CA defendants file answers; 78% default judgment rate for unanswered cases. Confirms large addressable market but also implies most defendants do not retain counsel — the conversion funnel is narrower than it appears."
+        }
+      ],
+      "justification": "The 0-to-1,250 new files/quarter ramp is aggressive but not implausible for a well-capitalized firm with an effective docket engine. The internal math is: 2,220 annual files × ~$1,500 blended average = $3.33M from flat fees alone, plus ~$400-700K from counterclaim recoveries (see separate assumption). The Q4 ramp requires the docket engine to be fully operational in all 4 states and converting at 3%+ by Month 7. Real-world evidence from similar productized legal services firms (bankruptcy petition preparers, traffic defense) suggests 6-12 months to reach operational efficiency. The $3.75M base case assumes best-execution on every lever simultaneously. A midline base case of $2.5M-$3.2M assumes 15-25% slippage in the new-file ramp (actual Q4 new files of 900-1,050 rather than 1,250) and lower counterclaim recoveries in Year 1.",
+      "impact_if_wrong": "If Year 1 revenue is $2.5M rather than $3.75M, the firm generates $1.25M less revenue. At $217.8K burn/month, this means Year 1 losses are approximately $2.1M (12 × $217.8K minus $3.75M revenue = deficit/surplus analysis needed), and the initial capital requirement needs to be higher."
+    },
+    {
+      "id": "paralegal_attorney_loaded_rates",
+      "claim_in_plan": "Paralegal $35/hr loaded; attorney $150/hr loaded",
+      "category": "financial",
+      "verdict": "understated",
+      "midline_estimate": "Paralegal loaded cost: $42-$52/hr (blended across CA, FL, WA, NY for experienced paralegals); attorney loaded cost: $120-$175/hr for associates at consumer law firms; $200-$250/hr loaded for partners (relevant for Tier 3 cases requiring partner oversight)",
+      "evidence": [
+        {
+          "source": "BLS — Paralegal Salary by State",
+          "url": "https://www.paralegal411.org/salaries/",
+          "data_point": "CA: $76,080/yr = $36.58/hr base; WA: $72,590/yr = $34.90/hr base; NY: $69,860/yr = $33.59/hr; FL: ~$54,000/yr = $25.96/hr. Blended 4-state: ~$32-37/hr base. Loaded at 1.25x-1.35x = $40-$50/hr."
+        },
+        {
+          "source": "NALA 2024 Compensation Report",
+          "url": "https://nala.org/wp-content/uploads/2025/01/2024-NALA-Compensation-Utilization-Report-ExecSumm-FINAL-1-15-25.pdf",
+          "data_point": "Paralegal billing rates average $134/hr nationwide; compensation has grown 15% from 2022-2024."
+        },
+        {
+          "source": "Indeed — Associate Attorney salary at Collection Law Firm",
+          "url": "https://www.indeed.com/cmp/Collection-Law-Firm-2/salaries/Associate-Attorney",
+          "data_point": "Collection law firm associate attorney average: $83,707/year = $40.24/hr base. Loaded at 1.25x-1.4x = $50-$56/hr. But this is base only — total comp with benefits, malpractice allocation, and overhead = $95-$125K fully loaded annually."
+        },
+        {
+          "source": "LawPay — Lawyer Hourly Rate by State 2025",
+          "url": "https://www.lawpay.com/about/blog/lawyer-hourly-rate-by-state/",
+          "data_point": "Average lawyer hourly rate: $162-$392; CA average: $422/hr market rate. Consumer law associates at small firms typically earn $75K-$120K, implying a loaded cost of $100K-$160K/year or $48-$77/hr."
+        }
+      ],
+      "justification": "The plan's $35/hr paralegal loaded cost is achievable in FL/WA but understated for CA (where experienced collection-defense paralegals in major metros earn $36-44/hr base before benefits) and NY ($32-44/hr base). A blended 4-state midline is $42-$50/hr loaded, roughly 20-43% higher than the plan's $35. The $150/hr loaded attorney cost is more defensible — it implies a total cost of ~$312,000/year for a fully loaded associate (at 40 hrs/week × 50 weeks), which exceeds realistic small-firm associate compensation, suggesting $150/hr is actually a slightly high estimate for the attorney input cost per case. The real issue is that partner time (at $200-$250/hr) is not separately broken out in the model; the Tier 3 attorney hours at $150/hr underprices partner review time.",
+      "impact_if_wrong": "A 20% increase in paralegal loaded cost (from $35 to $42/hr) increases paralegal COGS by $70-$90/file on Tier 2/3 cases, reducing contribution margin by approximately 8-12% per file. At 2,220 files, this is roughly $155K-$200K in additional annual labor cost."
+    }
+  ]
+}
